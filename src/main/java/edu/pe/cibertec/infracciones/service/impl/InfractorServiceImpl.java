@@ -56,7 +56,6 @@ public class InfractorServiceImpl implements IInfractorService {
         infractorRepository.save(infractor);
     }
 
-
     private InfractorResponseDTO mapToResponse(Infractor infractor) {
         InfractorResponseDTO dto = new InfractorResponseDTO();
         dto.setId(infractor.getId());
@@ -67,4 +66,18 @@ public class InfractorServiceImpl implements IInfractorService {
         dto.setBloqueado(infractor.isBloqueado());
         return dto;
     }
+
+    @Override
+    public void VeriBloqueo(Long infractorId) {
+        Infractor infractor = infractorRepository.findById(infractorId)
+                .orElseThrow(() -> new InfractorNotFoundException(infractorId));
+
+        long multasVencidas = infractorRepository.contarVencidas(infractorId);
+
+        if (multasVencidas >= 3) {
+            infractor.setBloqueado(true);
+            infractorRepository.save(infractor);
+        }
+    }
+
 }

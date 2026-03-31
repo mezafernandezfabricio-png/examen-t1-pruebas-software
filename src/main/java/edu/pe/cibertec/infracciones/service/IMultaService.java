@@ -10,4 +10,12 @@ public interface IMultaService {
     List<MultaResponseDTO> obtenerMultasPorInfractor(Long infractorId);
     List<MultaResponseDTO> obtenerMultasPorVehiculo(Long vehiculoId);
 
+
+
+
+
+    void ActuEstados();
+
+
+
 }
