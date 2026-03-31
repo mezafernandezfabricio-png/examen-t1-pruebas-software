@@ -76,4 +76,10 @@ class PagoServiceImplTest {
         assertEquals(0.00, pagoCapturado.getDescuentoAplicado());
         assertEquals(575.00, pagoCapturado.getMontoPagado());
     }
+
+
+
+
+
+
 }

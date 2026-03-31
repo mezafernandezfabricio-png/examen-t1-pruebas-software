@@ -36,4 +36,9 @@ class InfractorServiceImplTest {
 
         verify(infractorRepository, never()).save(any(Infractor.class));
     }
+
+
+
+
+
 }

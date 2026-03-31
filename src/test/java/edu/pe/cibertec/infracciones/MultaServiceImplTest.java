@@ -38,4 +38,8 @@ class MultaServiceImplTest {
         assertEquals(EstadoMulta.VENCIDA, multa.getEstado());
         verify(multaRepository, times(1)).save(multa);
     }
+
+
+
+
 }
