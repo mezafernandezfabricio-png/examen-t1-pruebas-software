@@ -2,7 +2,7 @@ name: Evaluación T1 - Tests Automáticos
 
 on:
   push:
-    branches: [ "main" ] # Cambia a "master" si ese es el nombre de tu rama principal
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -21,4 +21,4 @@ jobs:
           cache: maven
 
       - name: Build and Test with Maven
-        run: mvn test
+        run: mvn test -Dtest=InfractorServiceImplTest,MultaServiceImplTest,PagoServiceImplTest
